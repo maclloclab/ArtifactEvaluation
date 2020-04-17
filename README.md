@@ -3,7 +3,7 @@
 
 ## 1. Preparation
 
-Please download the (https://drive.google.com/file/d/1XOYXPMY1jRgmn4eosunvLqi2YMcuQGiK/view?usp=sharing "data package") (about 400 MB) and uncompress the data (about 3 GB after uncompression).
+Please download the [data package](https://drive.google.com/file/d/1XOYXPMY1jRgmn4eosunvLqi2YMcuQGiK/view?usp=sharing) (about 400 MB) and uncompress the data (about 3 GB after uncompression).
 
 ``` sh
 $ tar -zxvf AE.tar.gz
