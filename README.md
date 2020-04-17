@@ -3,7 +3,7 @@
 
 ## 1. Environment Preparation
 ``` sh
-JDK 1.7, Python 3+, Maven 3+
+JDK 1.7, Python 3+, numpy, Maven 3+
 ```
 To apply ProFL on subjects on Defect4J, it is preferrable to compile the project with JDK 1.7. 
 
