@@ -76,7 +76,57 @@ We summarize the expected execution information of three examples in the followi
 Example Name | Bug Method | Ranked by Spectrum | Ranked by ProFL |  Execution Time|
 :-: | :-: | :-: | :-: | :-:
 Lang-17 | format | 17 | 1 | < 2 min|
-Chart-20|ValueMarker.init | 5 | 1 | < 2min|
-Time-19| getOffsetFromLocal |0| 1 | < 2min|
+Chart-20|ValueMarker.init | 5 | 1 | < 2 min|
+Time-19| getOffsetFromLocal | 77| 1 | < 10 min|
 
+
+## 4 Data Structure 
+All the input or intermediate data are in `data/` directory, 
+and the generated log data are  in `script` directory.
+
+### 4.1 Input Data
+* data/
+	* mutatorResults-0/: APR and Mutation results (full matrix) for each subject
+	* 0-partial-mutatorResults-0/: APR results (partial matrix with order 1) for each subject
+	* 0-partial-mutatorResults-0/: APR results (partial matrix with order 2) for each subject
+	* 0-partial-mutatorResults-0/: APR results (partial matrix with order 3) for each subject
+	* FailingTests/: Failing tests for each subject
+	* MethodInfo/: Method information for each subject
+	* spectrum_ag/: pre-calculated SBFL (due to the large size of coverage data)
+	* pk/: page-rank FL reused from previous work
+	* TimeLog/: execution cost log for the first version of each subject
+	
+	
+### 4.2 Generated Data
+* script/
+	* full-results/: all FL results for each version of each subject
+		* o-new-1-1-max.csv: Muse_PIT
+		* o-meta-4-max.csv: Metallaxis_PIT
+		* o-hy-4-max.csv: MCBFL_PIT
+		* o-new-1-1-max.csv: ProFL_PIT
+		* a-new-1-1-max.csv: Muse_Prapr
+		* a-meta-4-max.csv: Metallaxis_Prapr
+		* a-hy-4-max.csv: MCBFL_Prapr
+		* a-new-1-1-max.csv: ProFL_Prapr
+		* a-pk-1-1-max.csv: ProFL_PRFL
+		* a-pka-1-1-max.csv: ProFL_PRFLMA
+	* logs/: summary of all subjects with whole matrix
+	* *-part-results/: partial matrix results with different partial orders
+	* *-part-logs/: summary of all subjects with partial matrix
+	* final-results: final results in the form of table
+	
+
+		
+
+## 5 Code Structure 
+All code related to fault localization is in the directory `script/muflscripts-AE/` and 
+the code for statistics is in the directory `script/statisticcode/`
+
+* script/muflscripts-AE/
+	* FLcode/new/: entry of various FL techniques
+		* MBFL.py: entry of full matrix FL
+		* part-MBFL.py: entry of partial matrix FL
+	* FLcode/refine/base_f2p_advance.py: core code of suspicious score calculation
+	* FLcode/preProcess/: data preprocessing
+	
 
