@@ -67,7 +67,7 @@ For example, to execute ProFL on Lang-26 with following instructions.
 
 ```sh
 $ cd tool/examples
-$ python run-example.py Lang-26
+$ python3 run-example.py Lang-26
 ```
 
 It would first execute maven compile and test tasks on the project
