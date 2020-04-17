@@ -23,7 +23,7 @@ In the directory `scripts/`, each bash script (i.e., `Table-*.sh`) runs experime
 For example, executing the script `Table-5.sh` can collecting and reporting the results in Table-5; the generated results are in the file `Table-5.csv` in the directory `scripts/final-results/`.
 
 ```sh
-$ cd AE/scripts
+$ cd AE/script
 $ ./Table-5.sh
 ```
 In detail, `Table-5.sh`, for each subject in Defect4J-1.2.0, it first runs spectrum, Muse, Metallaxis, MCBFL and ProFL techniques via executing `MBFL.py`;
