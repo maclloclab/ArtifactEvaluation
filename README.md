@@ -2,7 +2,11 @@
 
 
 ## 1. Environment Preparation
+``` sh
 JDK 1.7, Python 3+, Maven 3+
+```
+To apply ProFL on subjects on Defect4J, it is preferrable to compile the project with JDK 1.7. 
+
 
 
 ## 2. Experiment Reproduction
@@ -38,6 +42,9 @@ To install the ProFL into the local maven repository.
 $ cd tool/proFL
 $ mvn clean install -Dhttps.protocols=TLSv1.2
 ```
+
+If you encounter compilation error (e.g., saying signature of a certain method does not match the supplied arguments), probably your local repository contains some of old JAR files downloaded from Maven Central Repo. Please remove them via `rm -rf ~/.m2/repository/org/pitest` before installation.
+
 
 ### 3.2 Configure ProFL
 Insert the following code into the `pom.xml` of the target project (already inserted for the three example projects).
