@@ -1,11 +1,20 @@
 # Artifact Evaluation
 
 
-## 1. Environment Preparation
+## 1. Preparation
+
+Please download the (https://drive.google.com/file/d/1XOYXPMY1jRgmn4eosunvLqi2YMcuQGiK/view?usp=sharing "data package") (about 400 MB) and uncompress the data (about 3 GB after uncompression).
+
+``` sh
+$ tar -zxvf AE.tar.gz
+```
+
+Please ensure your environment satisfying the following requirements. In particular, to apply ProFL on subjects in Defects4J, it is preferrable to compile the project with JDK 1.7. 
+
 ``` sh
 JDK 1.7, Python 3+, numpy, Maven 3+
 ```
-To apply ProFL on subjects on Defect4J, it is preferrable to compile the project with JDK 1.7. 
+
 
 
 
@@ -14,7 +23,7 @@ In the directory `scripts/`, each bash script (i.e., `Table-*.sh`) runs experime
 For example, executing the script `Table-5.sh` can collecting and reporting the results in Table-5; the generated results are in the file `Table-5.csv` in the directory `scripts/final-results/`.
 
 ```sh
-$ cd scripts
+$ cd AE/scripts
 $ ./Table-5.sh
 ```
 In detail, `Table-5.sh`, for each subject in Defect4J-1.2.0, it first runs spectrum, Muse, Metallaxis, MCBFL and ProFL techniques via executing `MBFL.py`;
@@ -39,7 +48,7 @@ To apply ProFL on any Java project,  one only needs to
 To install the ProFL into the local maven repository. 
 
 ```sh
-$ cd tool/proFL
+$ cd AE/tool/proFL
 $ mvn clean install -Dhttps.protocols=TLSv1.2
 ```
 
@@ -66,7 +75,7 @@ Passing the example name to the python script `run-example.py` can execute ProFL
 For example, to execute ProFL on Lang-26 with following instructions.
 
 ```sh
-$ cd tool/examples
+$ cd AE/tool/examples
 $ python3 run-example.py Lang-26
 ```
 
